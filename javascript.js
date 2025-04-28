@@ -42,7 +42,7 @@ let boton2=
 function menu() {
     let opcion;
     do {
-        opcion = prompt("bienvenido\n\n1. Inicio de sesion\n2. registrarce\n3. salir\n\elige una opcion");
+        opcion = prompt("bienvenido\n\n1. Inicio de sesion\n2. registrarse\n3. salir\n\elige una opcion");
         if (opcion === null) {
             alert("cancelado por el usuario");
             break;
@@ -101,7 +101,7 @@ function ingreso() {
     }
     else {
         alert(" aun no te encuentras registrado; registrate para continuar");
-        if (confirm("desea registrarce?")) {
+        if (confirm("desea registrarse?")) {
             alert("ingresa tus datos");
             registro();
         } else {
