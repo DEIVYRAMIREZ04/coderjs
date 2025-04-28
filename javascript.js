@@ -42,7 +42,7 @@ let boton2=
 function menu() {
     let opcion;
     do {
-        opcion = prompt("bienvenido\n\n1. Inicio de seccion\n2. registrarce\n3. salir\n\elige una opcion");
+        opcion = prompt("bienvenido\n\n1. Inicio de sesion\n2. registrarce\n3. salir\n\elige una opcion");
         if (opcion === null) {
             alert("cancelado por el usuario");
             break;
@@ -74,7 +74,7 @@ function ingreso() {
     if (usuarioEncontrado) {
         let contraseña = Number(prompt("ingresa tu contraseña"));
         if (contraseña === usuarioEncontrado.contraseña) {
-            if (confirm(`hola ${nombreUsuario} deseas ingresar?`)) {
+            if (confirm(`hola ${nombreUsuario} deseas comenzar?`)) {
                 salirDelMenu = true;
                 window.location.href = "paginas/ingreso.html";
                 return;
@@ -90,7 +90,7 @@ function ingreso() {
                 contraseña = Number(prompt("ingresa nuevamente tu contraseña"))
             }
             while (contraseña !== usuarioEncontrado, contraseña) {
-                confirm(`hola ${usuario} deseas ingresar?`)
+                confirm(`hola ${usuario} deseas comenzar?`)
                 salirDelMenu = true;
                 window.location.href = "paginas/ingreso.html";
                 return;
@@ -100,9 +100,9 @@ function ingreso() {
 
     }
     else {
-        alert("no estas en nuestra base de datos aun; por favor registrate");
+        alert(" aun no te encuentras registrado; registrate para continuar");
         if (confirm("desea registrarce?")) {
-            alert("continua con el registro");
+            alert("ingresa tus datos");
             registro();
         } else {
             alert("hasta pronto");
@@ -128,7 +128,7 @@ function registro() {
     alert(`${newusuario} has sido registrado con exito`);
 
 
-    if (confirm(`${newusuario} quieres ingresar?`)) {
+    if (confirm(`${newusuario} quieres comenzar?`)) {
         ingreso();
     } else {
         alert(`${newusuario} regresa pronto, ya has sido registrado`)
