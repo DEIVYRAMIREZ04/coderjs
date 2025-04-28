@@ -36,14 +36,15 @@ body {
     align-items: center;
     height: 100vh;
         
+
+    .tamñ{
+      width: auto;
+      font-size: 4em;
+      background-color: $color4;
+      color: white;
+      border-radius: 20px;
+      padding: 10px;
 }
-.tamñ{
-    width: auto;
-    font-size: 4em;
-    background-color: $color4;
-    color: white;
-    border-radius: 20px;
-    padding: 10px;
 }
 /*Logo empresa*/
 .logo{
@@ -67,4 +68,12 @@ body {
 .colorBodyIngreso{
     background:linear-gradient(  #888787 ,#01194b );
     background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .ingreso{
+       height: none;
+       font-size: 2em;
+        
+    }
 }
