@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background:linear-gradient(to bottom, #01194b , #888787)
+    }
+.tit{
+    text-align: center;
+    font-size: 3em;
+}
+.saludo{
+    text-align: center;
+    font-size: 2em;
+    color: rgb(161, 161, 184);
+    padding: 10px;
+}
+
+    /*este es el estilo del boton index*/
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+        
+}
+.tamñ{
+    width: auto;
+    font-size: 4em;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+}

@@ -1,0 +1,6 @@
+@mixin flex( $j-cont, $direct, $padi){
+    display: flex;
+    justify-content: $j-cont;
+    flex-direction: $direct;
+    padding: $padi;
+}

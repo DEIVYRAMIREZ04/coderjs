@@ -1,0 +1,70 @@
+             /*variables*/
+$color1:black;
+$color2:white;
+$color3:blue;
+$color4:gray;
+@use "mix" as bb;
+
+             /*reset vallores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+           /*estilos del body*/
+body {
+    background:linear-gradient(to bottom,  #888787 50%,#01194b 50%)
+    }
+.tit{
+    text-align: center;
+    font-size: 3em;
+    color:$color1 ;
+    padding: 30px;
+}
+.saludo{
+    text-align: center;
+    font-size: 2em;
+    color: rgb(41, 41, 75);
+    padding: 10px;
+}
+
+    /*este es el estilo del boton index*/
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+        
+}
+.tamñ{
+    width: auto;
+    font-size: 4em;
+    background-color: $color4;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+/*Logo empresa*/
+.logo{
+    @include bb.flex(center, row, 5px);
+     .logoo{
+        width: 70%;
+        height: 150px;
+     }
+    
+    
+}
+/*pagina de ingreso*/
+
+.ingreso{
+    @include bb.flex(center, row, 5px);
+    font-size: 5em;
+    align-items: center;
+    height: 100vh;
+    
+}
+.colorBodyIngreso{
+    background:linear-gradient(  #888787 ,#01194b );
+    background-repeat: no-repeat;
+}
