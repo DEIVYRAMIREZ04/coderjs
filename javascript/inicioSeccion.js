@@ -1,12 +1,6 @@
 let nombreUsuario;
 let contraseña;
-/*let usuarios =JSON.parse(localStorage.getItem("usuarios")) || {
-      deivy : 1234,
-      lina : 5678,
-      alejandro : 7890,
-      norelia : 12345,
-      luisa : 67890
-};*/
+
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [
     { usuario: "deivy", contraseña: 1234 },
     { usuario: "lina", contraseña: 5678 },
@@ -14,30 +8,33 @@ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [
     { usuario: "norelia", contraseña: 12345 },
     { usuario: "luisa", contraseña: 67890 }
 ];
+
+
+
+let botonCliente = document.getElementById("boton2");
+let botonEmpleado = document.getElementById("boton1");
+
+botonEmpleado.addEventListener('click', empleado);
+botonCliente.addEventListener('click', cliente);
+
+function empleado() {
+    window.open("paginas/empleado.html", "_blank");
+}
+
+function cliente() {
+    window.open("paginas/clientes.html", "_blank");
+}
+
+
+
+
+/*
 let salirDelMenu = false;
 
 
 function guardarUsuarios() {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
-
-
-
-/*let boton1=
- document.createElement("button");
- boton1.textContent="REGISTRARCE";
- boton1.id = "myBoton";
- document.body.appendChild(boton1);
- boton1.addEventListener("click", registro );
-
-
-let boton2=
- document.createElement("button");
- boton2.textContent="INGRESAR";
- boton2.id = "myBoton";
- document.body.appendChild(boton2);
- boton2.addEventListener("click", ingreso );
-*/
 
 function menu() {
     let opcion;
@@ -62,8 +59,8 @@ function menu() {
                 alert("ingresa una opcion valida");
         }
     }
-    while (opcion !== "3" && !salirDelMenu);
-
+    while (opcion !== "3" && !salirDelMenu); 
+    return;
 };
 
 
@@ -80,6 +77,7 @@ function ingreso() {
                 return;
             } else {
                 alert("hasta pronto");
+                return;
             }
 
         }
@@ -106,6 +104,7 @@ function ingreso() {
             registro();
         } else {
             alert("hasta pronto");
+            return;
         }
 
 
@@ -137,55 +136,8 @@ function registro() {
 }
 console.log(usuarios);
 
-
-
-/*let nombre1 
-const contraseña = 12345;
-let contra;
-nombre1=prompt("ingresa tu nombre");
-if (nombre1 === "carlos") {
-    alert("hola carlos");
-    contra = Number(prompt("ingresa tu contraseña"));
-    if (contra === contraseña) {
-        alert("vienvenido a casa");
-    }
-    else {
-        while (contra !== contraseña){
-            alert("contraseña incorrecta");
-            contra =Number(prompt("ingresa tu contraseña"))
-            
-        }
-    }
-        //window.location.href = "saludo.html";
-        alert("vienvenido a casa");
-    }
-
-
-else  { {(alert("no eres el propietario"))
-        while (nombre1 !== "carlos")
-        nombre1=prompt("ingresa nuevamente tu nombre")
-        
-  }  
- 
-
-    alert("hola carlos");
-    contra = Number(prompt("ingresa tu contraseña"));
-    if (contra === contraseña) {
-        //window.location.href = "saludo.html";
-        alert("vienvenido a casa");
-    }
-    else {
-        while (contra !== contraseña) {
-            alert("contraseña incorrecta");
-            contra = Number(prompt("ingresa tu contraseña"))
-        }
-       // window.location.href = "saludo.html";
-       alert("vienvenido a casa");
-    }
-}
-
-
-verificacion(); 
 */
+
+
 
 

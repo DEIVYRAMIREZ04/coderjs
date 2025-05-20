@@ -14,7 +14,9 @@ $color4:gray;
 
            /*estilos del body*/
 body {
-    background:linear-gradient(to bottom,  #888787 50%,#01194b 50%)
+    background:linear-gradient(to bottom,  #888787 50%,#01194b 50%);
+    height: 100vw;
+    
     }
 .tit{
     text-align: center;
@@ -33,9 +35,8 @@ body {
 .boton{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-        
+    gap: 3em;
+            
 
     .tamñ{
       width: auto;
@@ -61,13 +62,24 @@ body {
 .ingreso{
     @include bb.flex(center, row, 5px);
     font-size: 5em;
-    align-items: center;
-    height: 100vh;
+    height: 2em;
+
     
 }
 .colorBodyIngreso{
-    background:linear-gradient(  #888787 ,#01194b );
+    background:linear-gradient(  #0a0a11 ,#0a027a );
     background-repeat: no-repeat;
+    height: 50vw;
+    color: $color4;
+}
+.saludoEntrada{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: rgb(189, 192, 226);
 }
 
 @media (max-width: 768px) {
