@@ -1,12 +1,16 @@
-let titulo = document.getElementById("registrar")
+/*elementos insertados al DOM*/
+let titulo = document.getElementById("registrar");
 titulo.innerText = "DEBES ESTAR REGISTRADO PARA PODER CONTINUAR";
-let tex1 = document.getElementById("tex1")
-tex1.innerText = "REGISTRATE"
-let titulo2 = document.getElementById("ingresar")
-titulo2.innerText = "INICIO DE SECCION"
+let nuevoUsuario = document.getElementById("nuevoUsuario");
+nuevoUsuario.innerText = "REGISTRATE";
+let titulo2 = document.getElementById("ingresar");
+titulo2.innerText = "INICIO DE SECCION";
 
+/*array ppal donde se almacenaran los objetos usuario*/
 const usuarios = [];
-let formulario = document.getElementById("formulario")
+
+/*cuerpo del formulario1*/
+let formulario = document.getElementById("formulario");
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -22,24 +26,27 @@ formulario.addEventListener('submit', (e) => {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     formulario.reset();
 });
+
+/*cuerpo del formulario2*/
 let formulario2 = document.getElementById("formulario2")
 formulario2.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
 
     let inputNombre2 = document.getElementById('inputNombre2');
     let inputContraseña2 = document.getElementById('inputContraseña2')
-    
-    
-    let usuarioEncontrado = usuarios.find(u => u.nombre === inputNombre2.value);
-    if (usuarioEncontrado){
-        if (usuarioEncontrado.contraseña===inputContraseña2.value){
-             window.open("colilla.html", "_blank")
-        }else{
+    let usuarioEncontrado = JSON.parse(localStorage.getItem("usuarios"));
+    usuarioEncontrado = usuarioEncontrado.find(u => u.nombre === inputNombre2.value);
+    console.log(usuarioEncontrado)
+    if (usuarioEncontrado) {
+        if (usuarioEncontrado.contraseña === inputContraseña2.value) {
+            window.open("colilla.html", "_blank")
+            
+        } else {
             alert("contraseña incorrecta")
         }
-    }else{
+    } else {
         alert("usuario incorrecto")
     }
     formulario2.reset();
-    });
+});

@@ -4,32 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EMPLEADO</title>
     <link rel="stylesheet" href="../css/estyle.css">
 </head>
 
-<body>
-    
+<body class="bodyEmpleado">
+
+
     <div>
         <h1 id="registrar" class="tit"></h1>
-        <h2 id="tex1"></h2>
+
     </div>
-    
-    <form id="formulario">
-        <input id="inputNombre" type="text" name="usuario" placeholder="nombre">
-        <input id="inputContrtaseña" type="password" name="contraseña" placeholder="contraseña">
-        <input type="submit" value="Enviar">
-    </form>
-    <div>
-        <h2 id="ingresar" class=""></h2>
-        <p id="tex2"></p>
+    <div class="flex">
+        <div class="cajaDelBoton">
+            <div>
+                <h2 id="nuevoUsuario"></h2>
+                <p id="tex1"></p>
+            </div>
+            <form id="formulario">
+                <input id="inputNombre" type="text" name="usuario" placeholder="nombre">
+                <input id="inputContrtaseña" type="password" name="contraseña" placeholder="contraseña">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <div class="cajaDelBoton">
+            <div>
+                <h2 id="ingresar" class=""></h2>
+                <p id="tex2"></p>
+            </div>
+            <form id="formulario2">
+                <input id="inputNombre2" type="text" name="usuario" placeholder="nombre">
+                <input id="inputContraseña2" type="password" name="contraseña" placeholder="contraseña">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
     </div>
-    <form id="formulario2">
-        <input id="inputNombre2" type="text" name="usuario" placeholder="nombre">
-        <input id="inputContraseña2" type="password" name="contraseña" placeholder="contraseña">
-        <input type="submit" value="Enviar">
-    </form>
-    
+
     <script src="../javascript/empleado.js"></script>
 </body>
 

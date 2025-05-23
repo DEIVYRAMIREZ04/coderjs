@@ -15,7 +15,9 @@ $color4:gray;
            /*estilos del body*/
 body {
     background:linear-gradient(to bottom,  #888787 50%,#01194b 50%);
-    height: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
     
     }
 .tit{
@@ -80,6 +82,30 @@ body {
     font-size: 3em;
     font-weight: bold;
     color: rgb(189, 192, 226);
+}
+/*pagina empleados*/
+
+/*ordenador de los formularios
+formulario1*/
+
+.flex{
+    @include bb.flex(space-evenly, row, 5px);
+    align-items: center;
+}
+.cajaDelBoton{
+    @include bb.flex(center, column, 5px);
+}
+#formulario{
+     @include bb.flex(center, column, 5px);
+     gap: 10px;
+     width: 100%;
+    
+}
+#formulario2{
+     @include bb.flex(center, column, 5px);
+     gap: 10px;
+     width: 100%;
+    
 }
 
 @media (max-width: 768px) {

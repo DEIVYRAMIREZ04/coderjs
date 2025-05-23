@@ -10,7 +10,9 @@
 /*estilos del body*/
 body {
   background: linear-gradient(to bottom, #888787 50%, #01194b 50%);
-  height: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
 .tit {
@@ -79,6 +81,42 @@ body {
   font-size: 3em;
   font-weight: bold;
   color: rgb(189, 192, 226);
+}
+
+/*pagina empleados*/
+/*ordenador de los formularios
+formulario1*/
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 5px;
+  align-items: center;
+}
+
+.cajaDelBoton {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+}
+
+#formulario {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+  width: 100%;
+}
+
+#formulario2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
