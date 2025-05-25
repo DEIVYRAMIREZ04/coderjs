@@ -14,11 +14,11 @@
 }
 
 /*estilos del body*/
-.bodyIng {
-  background: linear-gradient(to bottom, #888787, #01194b);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 200vh;
+.bodyIng .colores1 {
+  background-color: #01194b;
+}
+.bodyIng .colores2 {
+  background-color: gray;
 }
 
 .tit {
@@ -31,18 +31,19 @@
 .saludo {
   text-align: center;
   font-size: 3em;
-  color: rgb(41, 41, 75);
+  color: white;
   padding: 10px;
 }
 
 /*este es el estilo del boton index*/
 .boton {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   gap: 3em;
   margin: 20px;
   opacity: 90%;
-  height: 10vh;
+  height: 50vh;
   align-items: center;
 }
 .boton .tam1 {
@@ -85,20 +86,20 @@
 }
 
 .redes {
-  width: 30vw;
+  width: 20vw;
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
   padding: 0px;
-  padding-top: 100px;
+  padding-top: 50px;
   bottom: 3px;
   left: 10px;
   opacity: 95%;
   z-index: 1000;
 }
 .redes .ico {
-  width: 60px;
-  height: 35px;
+  width: 80px;
+  height: 60px;
 }
 
 /*Logo empresa*/
@@ -111,7 +112,7 @@
 
 .logoimg {
   width: 40vw;
-  height: 100px;
+  height: 120px;
   padding: 10px;
   gap: 10px;
   border-radius: 20px;
@@ -262,14 +263,46 @@ formulario1*/
 .cajonesInicio .der {
   text-align: center;
   width: 50vw;
-  padding: 100px;
+  padding: 130px;
   font-size: 2rem;
 }
 .cajonesInicio .izq {
   text-align: center;
   width: 50vw;
-  padding: 100px;
+  padding: 130px;
   font-size: 2rem;
+}
+
+.scale-up-hor-center {
+  -webkit-animation: scale-up-hor-center 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
+  animation: scale-up-hor-center 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.5s both;
+}
+
+@-webkit-keyframes scale-up-hor-center {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+@keyframes scale-up-hor-center {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+.imgplantilla {
+  background-image: url(../imagenes/fondoLibreta.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 768px) {
