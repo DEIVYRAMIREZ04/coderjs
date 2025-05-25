@@ -2,9 +2,9 @@
 let titulo = document.getElementById("registrar");
 titulo.innerText = "DEBES ESTAR REGISTRADO PARA PODER CONTINUAR";
 let nuevoUsuario = document.getElementById("nuevoUsuario");
-nuevoUsuario.innerText = "REGISTRATE";
+nuevoUsuario.innerText = "REGISTRARSE";
 let titulo2 = document.getElementById("ingresar");
-titulo2.innerText = "INICIO DE SECCION";
+titulo2.innerText = "INGRESAR";
 
 /*array ppal donde se almacenaran los objetos usuario*/
 const usuarios = [];
