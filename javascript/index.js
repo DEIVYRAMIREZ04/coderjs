@@ -18,7 +18,7 @@ botonEmpleado.addEventListener('click', empleado);
 botonCliente.addEventListener('click', cliente);
 
 function empleado() {
-    window.open("./paginas/iniciar.html", "_blank");
+    window.open("./paginas/empleado.html", "_blank");
 }
 
 function cliente() {

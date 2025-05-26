@@ -40,7 +40,7 @@ formulario2.addEventListener('submit', (e) => {
     console.log(usuarioEncontrado)
     if (usuarioEncontrado) {
         if (usuarioEncontrado.contraseña === inputContraseña2.value) {
-            window.open("colilla.html", "_blank")
+            window.open("iniciar.html", "_blank")
             
         } else {
             alert("contraseña incorrecta")

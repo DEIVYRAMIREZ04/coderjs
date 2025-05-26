@@ -52,6 +52,11 @@
              }
 
              ;
+             //estilos de la colilla
+             .titcolilla{
+                font-size: 3em;
+                
+             }
 
              /*este es el estilo del boton index*/
              .boton {
@@ -59,10 +64,11 @@
                  flex-direction: row;
                  justify-content: space-evenly;
                  gap: 3em;
-                 margin: 20px;
+                 margin: 50px;
                  opacity: 90%;
-                 height: 50vh;
+                 height: 10vh;
                  align-items: center;
+                 padding-bottom: 70px;
 
                  .tam1 {
                      width: 450px;
