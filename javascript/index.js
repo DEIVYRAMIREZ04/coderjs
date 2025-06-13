@@ -1,16 +1,5 @@
-let nombreUsuario;
+let usuario;
 let contraseña;
-
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [
-    { usuario: "deivy", contraseña: 1234 },
-    { usuario: "lina", contraseña: 5678 },
-    { usuario: "alejandro", contraseña: 7890 },
-    { usuario: "norelia", contraseña: 12345 },
-    { usuario: "luisa", contraseña: 67890 }
-];
-
-
-
 let botonCliente = document.getElementById("boton2");
 let botonEmpleado = document.getElementById("boton1");
 

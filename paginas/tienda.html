@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA</title>
+    <link rel="stylesheet" href="../css/estyle.css">
+
+</head>
+<header>
+    <h1>OFERTAS PARA EMPLEADOS</h1>
+</header>
+
+<body class="bodytienda">
+    <h1>PRODUCTOS</h1>
+    <div class="flexT">
+        <div>
+            <h2>cocina</h2>
+            <img src="../imagenes/cocina.png" alt="cocina">
+        </div>
+        <div>
+            <p id="cocina">descripcion</p>
+
+            <p id="precio1">producto 1 - $ 800000 <button class="tienda" id="miBotonT1">AGREGAR AL CARRITO</button></p>
+        </div>
+    </div>
+    <div class="flexT">
+        <div>
+            <h2>tanque</h2>
+            <img src="../imagenes/meza con pozuelo.png" alt="meza pozuelo">
+        </div>
+        <div>
+            <p id="tanque">descripcion</p>
+            <button class="tienda" id="miBotonT2">AGREGAR AL CARRITO</button>
+            <p id="precio2"></p>
+        </div>
+    </div>
+    <div class="flexT">
+        <div>
+            <h2>lavamanos</h2>
+            <img src="../imagenes/pedesta2.png" alt="pedestal">
+        </div>
+        <div>
+            <p id="lavamanos">descripcion</p>
+            <button class="tienda" id="miBotonT3">AGREGAR AL CARRITO</button>
+            <p id="precio3"></p>
+        </div>
+    </div>
+    <h2>CARRITO</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total $ <span id="total">0</span></p>
+    <button class="tienda" id="miBotonT4">COMPRAR</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../javascript/tienda.js"></script>
+</body>
+
+</html>

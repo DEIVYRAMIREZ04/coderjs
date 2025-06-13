@@ -96,13 +96,31 @@
   justify-content: space-evenly;
   flex-direction: row;
   padding: 0px;
-  padding-top: 50px;
+  padding-top: 5px;
   bottom: 3px;
   left: 10px;
   opacity: 95%;
   z-index: 1000;
 }
 .redes .ico {
+  width: 80px;
+  height: 60px;
+}
+
+.redesEmpleado {
+  width: 20vw;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 0px;
+  padding-top: 50px;
+  bottom: 3px;
+  left: 10px;
+  opacity: 95%;
+  z-index: 1000;
+  align-items: flex-end;
+}
+.redesEmpleado .ico {
   width: 80px;
   height: 60px;
 }
@@ -250,13 +268,16 @@ formulario1*/
   font-size: 20px;
 }
 
+.emple {
+  background-image: url(../imagenes/fabricato.png);
+  background-size: cover;
+}
+
 .bodyEmpleado {
   display: flex;
   justify-content: center;
   flex-direction: row;
   padding: 15px;
-  background-image: url(../imagenes/fabricato.png);
-  background-size: cover;
 }
 
 .cajonesInicio {
@@ -308,6 +329,65 @@ formulario1*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#regresar {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  width: 20%;
+  padding: 10px;
+  z-index: 1000;
+}
+#regresar #estiloBotonRegreso {
+  background-color: black;
+  color: white;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 30px;
+  align-items: center;
+}
+
+#datosCartaLaboral {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  font-family: "Arial", sans-serif;
+  margin: 10px;
+  line-height: 2.6;
+  color: white;
+  background-color: #01194b;
+  align-items: center;
+}
+
+#colilla {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  font-family: "Arial", sans-serif;
+  margin: 10px;
+  line-height: 2.6;
+  color: white;
+  background-color: #01194b;
+  align-items: center;
+}
+
+.letra {
+  font-size: 1.5rem;
+}
+
+.bodytienda {
+  background-color: gray;
+}
+
+.flexT {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 15px;
+  gap: 200px;
 }
 
 @media (max-width: 768px) {
