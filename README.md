@@ -34,3 +34,7 @@ Este sistema de autenticación es básico y está diseñado con fines educativos
 
 No utiliza una base de datos real; todos los datos se almacenan y procesan localmente desde el archivo JSON.
 
+Solo funciona en pantallas de escritorio aun no estan listos los diseños mobile.
+
+
+
