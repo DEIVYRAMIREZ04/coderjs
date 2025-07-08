@@ -25,4 +25,4 @@ fetch("./json/durata.json")
     container.innerHTML =
         "<h1>NO ESTAS EN EL SISTEMA</h1>"
 }
-    });
+    })
