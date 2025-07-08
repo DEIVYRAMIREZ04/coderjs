@@ -46,7 +46,7 @@ formulario.addEventListener('submit', (e) => {
   }
 
 
-  fetch("../json/durata.json")
+  fetch("./json/durata.json")
     .then(res => res.json())
     .then(data => {
       let empleadosAutorizados = data.map(obj => normalizarTexto(obj.nombre));
