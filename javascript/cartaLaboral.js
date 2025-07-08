@@ -4,7 +4,7 @@ fetch("../json/durata.JSON")
         console.log(durata)
         const infoCarta = JSON.parse(sessionStorage.getItem("usuarioCorrecto"));
         console.log (infoCarta);
-        //localStorage.setItem("inicioUsuario","deivy")
+       
         
         let container = document.getElementById("datosCartaLaboral");
         let validacion=durata.find(u => u.nombre.toLowerCase()=== infoCarta.usuario.toLowerCase());

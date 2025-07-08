@@ -11,47 +11,81 @@
 <header>
     <h1>OFERTAS PARA EMPLEADOS</h1>
 </header>
-
-<body class="bodytienda">
-    <h1>PRODUCTOS</h1>
-    <div class="flexT">
-        <div>
-            <h2>cocina</h2>
-            <img src="../imagenes/cocina.png" alt="cocina">
-        </div>
-        <div>
-            <p id="cocina">descripcion</p>
-
-            <p id="precio1">producto 1 - $ 800000 <button class="tienda" id="miBotonT1">AGREGAR AL CARRITO</button></p>
-        </div>
-    </div>
-    <div class="flexT">
-        <div>
-            <h2>tanque</h2>
-            <img src="../imagenes/meza con pozuelo.png" alt="meza pozuelo">
-        </div>
-        <div>
-            <p id="tanque">descripcion</p>
-            <button class="tienda" id="miBotonT2">AGREGAR AL CARRITO</button>
-            <p id="precio2">producto 2 - 600000</p>
-        </div>
-    </div>
-    <div class="flexT">
-        <div>
-            <h2>lavamanos</h2>
-            <img src="../imagenes/pedesta2.png" alt="pedestal">
-        </div>
-        <div>
-            <p id="lavamanos">descripcion</p>
-            <button class="tienda" id="miBotonT3">AGREGAR AL CARRITO</button>
-            <p id="precio3">producto 3- 720000</p>
-        </div>
-    </div>
-    <h2>CARRITO</h2>
+<div class = "tienda-car">
+    <h2>CARRITO DE COMPRAS</h2>
     <ul id="lista-carrito"></ul>
     <p>Total $ <span id="total">0</span></p>
     <button class="tienda" id="miBotonT4">COMPRAR</button>
+    <div id="carrito">
+        <p>El carrito está vacío.</p>
+    </div>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button onclick="mostrarFormularioCompra()">Comprar</button>
+</div>
 
+
+<body class="bodytienda">
+    <h1>PRODUCTOS</h1>
+    <div class="flexTContainer">
+        <div class="flexT">
+            <div>
+                <h2>cocina</h2>
+                <img class="img-p" src="../imagenes/cocina.png" alt="cocina">
+            </div>
+            <div>
+                <p id="cocina">descripcion</p>
+
+                <p id="precio1">producto 1 - $ 800000
+                    <button onclick="agregarAlCarrito(1, 'Cocina Acero', 800000,4)" class="tienda"
+                        id="miBotonT1">AGREGAR AL CARRITO</button>
+                </p>
+            </div>
+        </div>
+        <div class="flexT">
+            <div>
+                <h2>tanque</h2>
+                <img class="img-p" src="../imagenes/meza con pozuelo.png" alt="meza pozuelo">
+            </div>
+            <div>
+                <p id="tanque">descripcion </p>
+                <p>
+                    producto 2 - 600000
+                    <button onclick="agregarAlCarrito(2, 'Tanque Lavaplatos', 600000,3)" class="tienda"
+                        id="miBotonT2">AGREGAR AL CARRITO</button>
+                </p>
+            </div>
+        </div>
+        <div class="flexT">
+            <div>
+                <h2>lavamanos</h2>
+                <img class="img-p" src="../imagenes/pedesta2.png" alt="pedestal">
+            </div>
+            <div>
+                <p id="precio3">producto 3- 720000</p>
+                <p id="lavamanos">descripcion</p>
+                <button onclick="agregarAlCarrito(3, 'Lavamanos', 720000,1)" class="tienda" id="miBotonT3">AGREGAR AL
+                    CARRITO</button>
+
+            </div>
+        </div>
+    
+        <form class="formCompra" id="formularioCompra" style="display:none; margin-top: 20px;">
+            <h3>Finalizar Compra</h3>
+            <input type="text" id="nombre" placeholder="Nombre completo"><br><br>
+            <input type="text" id="contacto" placeholder="Teléfono o correo"><br><br>
+            <input type="text" id="direccion" placeholder="Dirección de envío"><br><br>
+            <select id="metodoPago">
+                <option value="">Selecciona un método de pago</option>
+                <option value="Tarjeta">Tarjeta</option>
+                <option value="Efectivo">Efectivo</option>
+            </select><div>
+                <button type="button" onclick="cancelarCompra()">Cancelar</button>
+                <button type="button" onclick="finalizarCompra()">Confirmar compra</button>
+            </div>
+            <img class="img-l" src="../imagenes/logo durata.png" alt="logo">
+        </form>
+
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script src="../javascript/tienda.js"></script>

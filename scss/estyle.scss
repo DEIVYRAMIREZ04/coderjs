@@ -40,6 +40,10 @@
                  color: $color2 ;
                  @extend.baseFuente;
                  padding: 30px;
+                 color: #01194b;
+                 background-color: #b8b5b5;
+                 border-radius: 20px;
+                 opacity: 80%;
              }
 
              ;
@@ -230,7 +234,7 @@
              }
 
              /*ordenador de los formularios
-formulario1*/
+            formulario1*/
 
              .flex {
                  @include bb.flex(space-evenly, row, 5px);
@@ -241,7 +245,6 @@ formulario1*/
              ;
 
              .cajaDelBoton {
-                 //@include bb.flex(center, column, 5px);
                  display: grid;
                  grid-template-columns: repeat(1, 1fr);
                  grid-template-rows: 2, 1fr;
@@ -441,9 +444,47 @@ formulario1*/
              .bodytienda{
                 background-color: $color4;
              };
+             .flexTContainer{
+                @include bb.flex(space-evenly, row, 10px)
+             }
              .flexT{
-                @include bb.flex(flex-start, row, 15px);
-                gap: 200px;
+                @include bb.flex(center, column, 15px);
+                gap: 20px;
+                border: 5px solid black;
+                border-radius: 20px;
+                width:20%;
+             };
+             .img-p{
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: contain;
+                border-radius: 20px;
+             };
+             .formCompra{
+                @include bb.flex(center, column, 15px);
+                position: fixed;
+                top: 20%;
+                left: 33%;
+                width: 35%;
+                height: 50%;
+                background-color: rgb(5, 10, 250);
+                z-index: 2;
+                border: 10px solid black;
+                border-radius: 20px;
+                color: white;
+             };
+             .img-l{
+                width: 90%;
+                height: 40px;
+                margin-top: 10px;
+             };
+             .tienda-car{
+                width: 30%;
+                height: auto;
+                background-color: #01194b;
+                color: antiquewhite;
+                border-radius: 15px;
              }
 
              @media (max-width: 768px) {
@@ -455,3 +496,4 @@ formulario1*/
              }
 
              ;
+             

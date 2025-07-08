@@ -1,114 +1,152 @@
-let descCocina = document.getElementById("cocina");
-descCocina.innerText = "cocina pozuelo derecho con estufa central y mueble bajo";
-let descTanque = document.getElementById("tanque");
-descTanque.innerText = "Mezon con estructura en patas de acero inoxidable con entrepaño";
-let desclavamanos = document.getElementById("lavamanos");
-desclavamanos.innerText = "Lavamanos de pedestal con instalacion gratuita"
-const carrito = [];
-let total = 0;
-let botonT1 = document.getElementById("miBotonT1");
-botonT1.addEventListener('click', botont1);
-function botont1() {
-    agregarCarrito('cocina', Number('800000'));
-    Swal.fire({
-        title: "producto agregado",
-        text: "has agregado la cocina al carrito",
-        icon: 'success',
-        confirmButtonText: 'ok'
-    })
+let carrito = [];
 
-};
-function agregarCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
-    total += precio;
-    console.log(carrito)
-    actualizarCarrito()
-};
-function actualizarCarrito() {
-    const lista = document.getElementById("lista-carrito");
-    const totalTodo = document.getElementById("total");
-    lista.innerHTML = "";
-    carrito.forEach((item) => {
-        let li = document.createElement("li");
-        li.textContent = `${item.nombre} - $${item.precio}`;
-        lista.appendChild(li);
-        console.log(item.precio)
-    });
-    totalTodo.textContent = total;
-};
-let botonT2 = document.getElementById("miBotonT2");
-botonT2.addEventListener('click', botont2);
-function botont2() {
-    agregarCarrito('tanque', Number('600000'));
-    Swal.fire({
-        title: "producto agregado",
-        text: "has agregado el tanque al carrito",
-        icon: 'success',
-        confirmButtonText: 'ok'
-    })
+function agregarAlCarrito(id, nombre, precio, stockDisponible) {
+  const productoExistente = carrito.find(p => p.id === id);
 
-};
-function agregarCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
-    total += precio;
-    console.log(carrito)
-    actualizarCarrito()
-};
-function actualizarCarrito() {
-    const lista = document.getElementById("lista-carrito");
-    const totalTodo = document.getElementById("total");
-    lista.innerHTML = "";
-    carrito.forEach((item) => {
-        let li = document.createElement("li");
-        li.textContent = `${item.nombre} - $${item.precio}`;
-        lista.appendChild(li);
-        console.log(item.precio)
-    });
-    totalTodo.textContent = total;
-};
-let botonT3 = document.getElementById("miBotonT3");
-botonT3.addEventListener('click', botont3);
-function botont3() {
-    agregarCarrito('pedestal', Number('720000'));
-    Swal.fire({
-        title: "producto agregado",
-        text: "has agregado el lavamanos al carrito",
-        icon: 'success',
+  if (productoExistente) {
+    if (productoExistente.cantidad < productoExistente.stock) {
+      productoExistente.cantidad += 1;
+    } else {
+        Swal.fire({
+        title: "LO SENTIMOS",
+        text: "No Hay Unidades Disponibles",
+        icon: 'error',
         confirmButtonText: 'ok'
-    })
+    });
+    }
+  } else {
+    carrito.push({ id, nombre, precio, cantidad: 1, stock: stockDisponible });
+  }
 
-};
-function agregarCarrito(nombre, precio) {
-    carrito.push({ nombre, precio });
-    total += precio;
-    console.log(carrito)
-    actualizarCarrito()
-};
-function actualizarCarrito() {
-    const lista = document.getElementById("lista-carrito");
-    const totalTodo = document.getElementById("total");
-    lista.innerHTML = "";
-    carrito.forEach((item) => {
-        let li = document.createElement("li");
-        li.textContent = `${item.nombre} - $${item.precio}`;
-        lista.appendChild(li);
-        console.log(item.precio)
-    });
-    totalTodo.textContent = total;
-};
-let botonT4 = document.getElementById("miBotonT4");
-botonT4.addEventListener('click', botont4);
-function botont4() {
+  actualizarCarritoUI();
+}
+
+function actualizarCarritoUI() {
+  const contenedor = document.getElementById("carrito");
+  contenedor.innerHTML = "";
+
+  if (carrito.length === 0) {
+    contenedor.innerHTML = "<p>El carrito está vacío.</p>";
+    return;
+  }
+
+  carrito.forEach(producto => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <p>${producto.nombre} - $${producto.precio} x ${producto.cantidad}</p>
+      <button onclick="incrementarCantidad(${producto.id})">Otra Unidad</button>
+      <button onclick="disminuirCantidad(${producto.id})">Restar</button>
+      <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+      <hr>
+    `;
+    contenedor.appendChild(div);
+  });
+
+  const total = carrito.reduce((sum, p) => sum + p.precio * p.cantidad, 0);
+  contenedor.innerHTML += `<p><strong>Total: $${total}</strong></p>`;
+}
+
+function incrementarCantidad(id) {
+  const producto = carrito.find(p => p.id === id);
+  if (producto && producto.cantidad < producto.stock) {
+    producto.cantidad++;
+  } else {
     Swal.fire({
-        title: "COMPRADO CON EXITO",
-        text: "Tus productos llegaran a casa",
-        icon: 'success',
+        title: "LO SENTIMOS",
+        text: "No Hay Unidades Disponibles",
+        icon: 'error',
         confirmButtonText: 'ok'
-    }).then(()=>{
-        carrito.length = 0;
-        total= 0;
-        actualizarCarrito();
     });
+  }
+  actualizarCarritoUI();
+}
+
+function disminuirCantidad(id) {
+  const producto = carrito.find(p => p.id === id);
+  if (producto && producto.cantidad > 1) {
+    producto.cantidad--;
+  } else {
+    carrito = carrito.filter(p => p.id !== id);
+  }
+  actualizarCarritoUI();
+}
+
+function eliminarProducto(id) {
+  carrito = carrito.filter(p => p.id !== id);
+  actualizarCarritoUI();
+}
+
+function vaciarCarrito() {
+  carrito = [];
+  actualizarCarritoUI();
+}
+
+function mostrarFormularioCompra() {
+  if (carrito.length === 0) {
+    Swal.fire({
+        title: "LO SENTIMOS",
+        text: "El Carrito Esta Vacio",
+        icon: 'error',
+        confirmButtonText: 'ok'
+    });
+    return;
+  }
+  document.getElementById("formularioCompra").style.display = "block";
+}
+
+function finalizarCompra() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const contacto = document.getElementById("contacto").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+  const metodoPago = document.getElementById("metodoPago").value;
+
+  if (!nombre || !contacto || !direccion || !metodoPago) {
+    Swal.fire({
+      title: "INCORRECTO",
+      text: "Completa Todos Los Campos",
+      icon: 'error',
+      confirmButtonText: 'ok'
+    });
+    return;
+  }
+
+  let resumen = `RESUMEN\nCliente: ${nombre}\nContacto: ${contacto}\nDirección: ${direccion}\nPago: ${metodoPago}\n\nProductos:\n`;
+  let total = 0;
+
+  carrito.forEach(p => {
+    resumen += ` ${p.nombre} x${p.cantidad} - $${p.precio * p.cantidad}\n`;
+    total += p.precio * p.cantidad;
+  });
+
+  resumen += `Total: $${total}`;
+
+  Swal.fire({
+    title: 'Resumen de compra',
+    icon: 'success',
+    html: `<pre style="text-align:left;">${resumen}</pre>`,
+    confirmButtonText: 'Aceptar',
+    customClass: {
+      popup: 'resumen-popup'
+    }
+  }).then(() => {
+    vaciarCarrito();
+    document.getElementById("formularioCompra").reset();
+    document.getElementById("formularioCompra").style.display = "none";
+  });
+}
+function cancelarCompra() {
     
-
-};
+  Swal.fire({
+    title: "¿Cancelar la compra?",
+    text: "Perderás los productos del carrito.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí, cancelar",
+    cancelButtonText: "No"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("carrito");
+      window.location.href = "tienda.html";
+    }
+  });
+}
