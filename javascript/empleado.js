@@ -1,4 +1,4 @@
-/*elementos insertados al DOM*/
+
 let titulo = document.getElementById("registrar");
 titulo.innerText = "SI ERES EMPLEADO DE NUESTRA COMPAÑIA PUEDES REGISTRARTE E INICIAR SESION, DE LO CONTRARIO INGRESA COMO CLIENTE.";
 let nuevoUsuario = document.getElementById("nuevoUsuario");
@@ -46,7 +46,7 @@ formulario.addEventListener('submit', (e) => {
   }
 
 
-  fetch("./json/durata.json")
+  fetch("../json/durata.json")
     .then(res => res.json())
     .then(data => {
       let empleadosAutorizados = data.map(obj => normalizarTexto(obj.nombre));
